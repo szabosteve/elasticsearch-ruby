@@ -18,21 +18,26 @@
 import 'rake_tasks/elasticsearch_tasks.rake'
 import 'rake_tasks/test_tasks.rake'
 import 'rake_tasks/doc_generator.rake'
+import 'rake_tasks/automated_release.rake'
 import 'profile/benchmarking/benchmarking_tasks.rake'
 require 'pathname'
 
 CURRENT_PATH = Pathname( File.expand_path('..', __FILE__) )
-SUBPROJECTS = [ 'elasticsearch',
-                'elasticsearch-transport',
-                'elasticsearch-dsl',
-                'elasticsearch-api',
-                'elasticsearch-extensions',
-                'elasticsearch-xpack' ].freeze
+SUBPROJECTS = [
+  'elasticsearch',
+  'elasticsearch-transport',
+  'elasticsearch-dsl',
+  'elasticsearch-api',
+  'elasticsearch-extensions',
+  'elasticsearch-xpack'
+].freeze
 
-RELEASE_TOGETHER = [ 'elasticsearch',
-                     'elasticsearch-transport',
-                     'elasticsearch-api',
-                     'elasticsearch-xpack' ].freeze
+RELEASE_TOGETHER = [
+  'elasticsearch',
+  'elasticsearch-transport',
+  'elasticsearch-api',
+  'elasticsearch-xpack'
+].freeze
 
 CERT_DIR = ENV['CERT_DIR'] || '.ci/certs'
 
